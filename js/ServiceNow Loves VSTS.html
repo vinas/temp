@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:8008/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>ServiceNow Loves VSTS</title>
+    <link rel="stylesheet" type="text/css" href="./ServiceNow Loves VSTS_files/styles.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="login logged pointer" onclick="vstsLogin();" id="vstsLogin"></div>
+        <div class="greenBox"><div class="logo"></div></div>
+        <div class="greenBox">
+            <div class="form">
+                <label>ServiceNow ID:</label>
+                <input type="text" id="snId" name="snId">
+                <br>
+                <select id="criticality">
+                    <option value="Low">Baixo</option>
+                    <option value="Medium">Médio</option>
+                    <option value="Critical">Crítico</option>
+                </select>
+                <br>
+                <button onclick="addIncidentToVsts();">OK</button>
+            </div>
+        </div>
+        <div class="greenBox">
+            <br>
+            <button onclick="bigSync();"><font size="5">⇩</font> Importar novos para o VSTS <font size="5">⇩</font></button>
+        </div>
+        <div class="greenBox">
+            <div class="resContainer" id="resContainer" style="display: none;">
+                <div class="close pointer" id="close" onclick="closeResContainer();" style="box-shadow: rgb(255, 255, 255) -1px -1px;">X</div>
+                <div class="errorTitle" id="errorTitle"></div>
+                <div class="errorDetail" id="errorDetail"></div>
+                <div class="success" id="success"></div>
+            </div>
+        </div>
+        <div class="greenBox">
+            <input type="text" id="vstsId" name="vstsId" size="4">
+            <button onclick="getVstsWorkItem();">Busca VSTS</button>
+        </div>
+        <div class="greenBox">
+            <input type="text" id="searchSnId" name="searchSnId" size="10">
+            <button onclick="getSnIncident();">Busca ServiceNow</button>
+        </div>
+        <div class="greenBox">
+            <button onclick="getOpenSnIncidentList();">TESTE</button>
+        </div>
+    </div>
+    <div class="loading" id="loading" style="display: none;">
+        <img class="middleElement" src="./ServiceNow Loves VSTS_files/loading.gif">
+    </div>
+
+<script type="text/javascript" src="./ServiceNow Loves VSTS_files/adal.min.js"></script>
+<script type="text/javascript" src="./ServiceNow Loves VSTS_files/vsts.js"></script>
+<script type="text/javascript" src="./ServiceNow Loves VSTS_files/sn.js"></script>
+<script type="text/javascript" src="./ServiceNow Loves VSTS_files/ajax.js"></script>
+<script type="text/javascript" src="./ServiceNow Loves VSTS_files/display.js"></script>
+<script type="text/javascript" src="./ServiceNow Loves VSTS_files/scripts.js"></script>
+</body></html>

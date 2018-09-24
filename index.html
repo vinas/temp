@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ServiceNow Loves VSTS</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="login notLogged pointer" onclick="vstsLogin();" id="vstsLogin"></div>
+        <div class="greenBox"><div class="logo"></div></div>
+        <div class="greenBox">
+            <div class="form">
+                <label>ServiceNow ID:</label>
+                <input type="text" id="snId" name="snId" />
+                <br />
+                <select id="criticality">
+                    <option value="Low">Baixo</option>
+                    <option value="Medium">Médio</option>
+                    <option value="Critical">Crítico</option>
+                </select>
+                <br />
+                <button onclick="addIncidentToVsts();">Importar para VSTS</button>
+            </div>
+        </div>
+        <div class="greenBox">
+            <br />
+            <button onclick="bigSync();">&#8681; Importar novos para VSTS &#8681;</button>
+        </div>
+        <div class="greenBox">
+            <div class="resContainer" id="resContainer">
+                <div class="close pointer" id="close" onclick="closeResContainer();">X</div>
+                <div class="errorTitle" id="errorTitle"></div>
+                <div class="errorDetail" id="errorDetail"></div>
+                <div class="success" id="success"></div>
+            </div>
+        </div>
+        <!--div class="greenBox">
+            <input type="text" id="vstsId" name="vstsId" size="4" />
+            <button onclick="getVstsWorkItem();">Busca VSTS</button>
+        </div>
+        <div class="greenBox">
+            <input type="text" id="searchSnId" name="searchSnId" size="10" />
+            <button onclick="getSnIncident();">Busca ServiceNow</button>
+        </div>
+        <div class="greenBox">
+            <button onclick="getOpenSnIncidentList();">TESTE</button>
+        </div-->
+    </div>
+    <div class="loading" id="loading">
+        <img class="middleElement" src="img/loading.gif" />
+    </div>
+</body>
+<script type="text/javascript" src="js/adal.min.js"></script>
+<script type="text/javascript" src="js/vsts.js"></script>
+<script type="text/javascript" src="js/sn.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
+<script type="text/javascript" src="js/display.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+</html>
