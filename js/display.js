@@ -12,8 +12,14 @@ function Display() {
     this.showLoading = showLoading;
     this.hideLoading = hideLoading;
     this.snIncident = snIncident;
+    this.consolePrintGenericError = consolePrintGenericError;
 
     return this;
+
+    function consolePrintGenericError(err) {
+        display.hideLoading();
+        console.log('** ERROR **\n' + consolePrintGenericError.caller + ' - ', err);
+    }
 
     function snIncident(incident) {
         var incident = incident.result[0],
